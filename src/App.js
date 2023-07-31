@@ -1,14 +1,20 @@
+import React, { useState } from 'react';
+import Header from './components/Header';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProductGrid from './components/ProductGrid';
 
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <div className="bg-blue-500 text-black p-5">
-   Hello, Tailwind CSS!
-</div>
-
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route
+          path="/category/:category"
+          element={<ProductGrid />}
+        />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
