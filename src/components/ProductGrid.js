@@ -1,14 +1,17 @@
 import React from 'react'
+import { useParams } from 'react-router-dom';
+import products from '../data/products.json';
 import ProductCart from "./ProductCart"
 
-const ProductGrid = ({ products }) => {
- 
-  const initialProductsToShow = 20;
-  const [visibleProducts, setVisibleProducts] = React.useState(products.slice(0, initialProductsToShow));
+const ProductGrid = () => {
+  const { category } = useParams();
+  const filteredProducts = products.filter(product => product.category === category);
 
-  
+  const initialProductsToShow = 20;
+  const [visibleProducts, setVisibleProducts] = React.useState(filteredProducts.slice(0, initialProductsToShow));
+
   const handleLoadMore = () => {
-    const nextProducts = products.slice(visibleProducts.length, visibleProducts.length + initialProductsToShow);
+    const nextProducts = filteredProducts.slice(visibleProducts.length, visibleProducts.length + initialProductsToShow);
     setVisibleProducts([...visibleProducts, ...nextProducts]);
   };
 
@@ -19,7 +22,7 @@ const ProductGrid = ({ products }) => {
           <ProductCart key={product.id} product={product} />
         ))}
       </div>
-      {visibleProducts.length < products.length && (
+      {visibleProducts.length < filteredProducts.length && (
         <button onClick={handleLoadMore} className="bg-blue-500 text-white p-2 mt-4">
           Load More
         </button>

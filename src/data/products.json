@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "name": "Elegant Leather Bag",
+      "description": "A stylish leather bag suitable for any occasion.",
+      "price": 200,
+      "discountedPrice": 150,
+      "rating": 4.5,
+      "category": "bags",
+      "imageUrl": "path/to/bag-image.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Sporty Running Shoe",
+      "description": "A comfortable shoe designed for avid runners.",
+      "price": 120,
+      "discountedPrice": 100,
+      "rating": 4.2,
+      "category": "shoes",
+      "imageUrl": "path/to/shoe-image.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Classic Wrist Watch",
+      "description": "A timeless piece that adds elegance to any outfit.",
+      "price": 300,
+      "discountedPrice": 250,
+      "rating": 4.8,
+      "category": "watches",
+      "imageUrl": "path/to/watch-image.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Summer Straw Hat",
+      "description": "A trendy hat perfect for beach outings.",
+      "price": 50,
+      "discountedPrice": null,
+      "rating": 3.9,
+      "category": "hats",
+      "imageUrl": "path/to/hat-image.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Stylish Fedora Hat",
+      "description": "A classic fedora hat for a touch of sophistication.",
+      "price": 60,
+      "discountedPrice": 50,
+      "rating": 4.6,
+      "category": "hats",
+      "imageUrl": "path/to/fedora-hat-image.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Designer Sneakers",
+      "description": "Trendy sneakers from a renowned designer brand.",
+      "price": 180,
+      "discountedPrice": 160,
+      "rating": 4.9,
+      "category": "shoes",
+      "imageUrl": "path/to/designer-sneakers-image.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Leather Messenger Bag",
+      "description": "A classic leather messenger bag for daily use.",
+      "price": 150,
+      "discountedPrice": null,
+      "rating": 4.4,
+      "category": "bags",
+      "imageUrl": "path/to/messenger-bag-image.jpg"
+    }
+    
+  ]
+  
