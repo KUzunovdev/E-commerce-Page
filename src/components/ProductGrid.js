@@ -6,7 +6,7 @@ import LoadMore from "./LoadMore";
 
 const ProductGrid = () => {
   const { category } = useParams();
-  const initialProductsToShow = 20;
+  const initialProductsToShow = 8;
 
   const [visibleProducts, setVisibleProducts] = useState([]);
 

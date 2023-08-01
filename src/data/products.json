@@ -1,74 +1,479 @@
 [
-    {
-      "id": 1,
-      "name": "Elegant Leather Bag",
-      "description": "A stylish leather bag suitable for any occasion.",
-      "price": 200,
-      "discountedPrice": 150,
-      "rating": 4.5,
-      "category": "bags",
-      "imageUrl": "path/to/bag-image.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Sporty Running Shoe",
-      "description": "A comfortable shoe designed for avid runners.",
-      "price": 120,
-      "discountedPrice": 100,
-      "rating": 4.2,
-      "category": "shoes",
-      "imageUrl": "path/to/shoe-image.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Classic Wrist Watch",
-      "description": "A timeless piece that adds elegance to any outfit.",
-      "price": 300,
-      "discountedPrice": 250,
-      "rating": 4.8,
-      "category": "watches",
-      "imageUrl": "path/to/watch-image.jpg"
-    },
-    {
-      "id": 4,
-      "name": "Summer Straw Hat",
-      "description": "A trendy hat perfect for beach outings.",
-      "price": 50,
-      "discountedPrice": null,
-      "rating": 3.9,
-      "category": "hats",
-      "imageUrl": "path/to/hat-image.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Stylish Fedora Hat",
-      "description": "A classic fedora hat for a touch of sophistication.",
-      "price": 60,
-      "discountedPrice": 50,
-      "rating": 4.6,
-      "category": "hats",
-      "imageUrl": "path/to/fedora-hat-image.jpg"
-    },
-    {
-      "id": 6,
-      "name": "Designer Sneakers",
-      "description": "Trendy sneakers from a renowned designer brand.",
-      "price": 180,
-      "discountedPrice": 160,
-      "rating": 4.9,
-      "category": "shoes",
-      "imageUrl": "path/to/designer-sneakers-image.jpg"
-    },
-    {
-      "id": 7,
-      "name": "Leather Messenger Bag",
-      "description": "A classic leather messenger bag for daily use.",
-      "price": 150,
-      "discountedPrice": null,
-      "rating": 4.4,
-      "category": "bags",
-      "imageUrl": "path/to/messenger-bag-image.jpg"
-    }
-    
-  ]
+  {
+    "id": 2,
+    "name": "Winter Wool Hat",
+    "description": "A warm wool hat for chilly days.",
+    "price": 40,
+    "discountedPrice": 35,
+    "rating": 4.2,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Classic Fedora",
+    "description": "A timeless hat for the sophisticated individual.",
+    "price": 60,
+    "discountedPrice": null,
+    "rating": 4.5,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Sporty Baseball Cap",
+    "description": "A casual cap for everyday wear.",
+    "price": 20,
+    "discountedPrice": 15,
+    "rating": 3.7,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Elegant Derby Hat",
+    "description": "A classy choice for special occasions.",
+    "price": 100,
+    "discountedPrice": 80,
+    "rating": 4.8,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Rugged Cowboy Hat",
+    "description": "A durable hat for the outdoorsy type.",
+    "price": 70,
+    "discountedPrice": null,
+    "rating": 4.0,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Stylish Beret",
+    "description": "A fashionable addition to any ensemble.",
+    "price": 45,
+    "discountedPrice": 40,
+    "rating": 4.3,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Lightweight Sun Hat",
+    "description": "Ideal for protection against the sun.",
+    "price": 30,
+    "discountedPrice": 25,
+    "rating": 3.8,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Vintage Bowler Hat",
+    "description": "A touch of retro elegance.",
+    "price": 75,
+    "discountedPrice": null,
+    "rating": 4.6,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image9.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Practical Rain Hat",
+    "description": "Stay dry with this waterproof hat.",
+    "price": 25,
+    "discountedPrice": 20,
+    "rating": 3.5,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image10.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Luxury Silk Hat",
+    "description": "Pure elegance crafted from fine silk.",
+    "price": 120,
+    "discountedPrice": 110,
+    "rating": 4.9,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Modern Beanie",
+    "description": "A trendy and comfortable beanie.",
+    "price": 35,
+    "discountedPrice": 30,
+    "rating": 4.1,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image12.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Traditional Panama Hat",
+    "description": "A classic summer hat for any occasion.",
+    "price": 55,
+    "discountedPrice": null,
+    "rating": 4.4,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image13.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Sporty Visor",
+    "description": "Perfect for tennis or a day on the golf course.",
+    "price": 15,
+    "discountedPrice": null,
+    "rating": 3.6,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image14.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Chic Floppy Hat",
+    "description": "A stylish statement piece for the summer.",
+    "price": 50,
+    "discountedPrice": 45,
+    "rating": 4.2,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image15.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Cool Snapback",
+    "description": "A youthful cap for a modern look.",
+    "price": 22,
+    "discountedPrice": null,
+    "rating": 3.9,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image16.jpg"
+  },
+  {
+    "id": 17,
+    "name": "High-end Top Hat",
+    "description": "An exquisite hat for formal affairs.",
+    "price": 150,
+    "discountedPrice": 140,
+    "rating": 5.0,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image17.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Casual Trucker Hat",
+    "description": "A laid-back option for everyday wear.",
+    "price": 18,
+    "discountedPrice": null,
+    "rating": 3.4,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image18.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Unique Feathered Hat",
+    "description": "A one-of-a-kind piece for those looking to stand out.",
+    "price": 95,
+    "discountedPrice": null,
+    "rating": 4.7,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image19.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Practical Ski Hat",
+    "description": "Stay warm on the slopes with this insulated hat.",
+    "price": 40,
+    "discountedPrice": null,
+    "rating": 4.0,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image20.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Durable Fisherman's Hat",
+    "description": "A sturdy choice for those out at sea.",
+    "price": 33,
+    "discountedPrice": 28,
+    "rating": 3.7,
+    "category": "hats",
+    "imageUrl": "path/to/hat-image21.jpg"
+  },
+
+
+  {
+    "id": 22,
+    "name": "Sporty Running Shoe",
+    "description": "A comfortable shoe designed for avid runners.",
+    "price": 120,
+    "discountedPrice": 100,
+    "rating": 4.2,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Elegant High Heel",
+    "description": "A stylish heel for formal occasions.",
+    "price": 150,
+    "discountedPrice": 130,
+    "rating": 4.5,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image23.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Casual Sneaker",
+    "description": "Everyday comfort in a sleek design.",
+    "price": 80,
+    "discountedPrice": 65,
+    "rating": 4.0,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image24.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Rugged Hiking Boot",
+    "description": "Built for the trails, with excellent grip.",
+    "price": 110,
+    "discountedPrice": null,
+    "rating": 4.3,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image25.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Comfortable Sandal",
+    "description": "Ideal for a relaxing day at the beach.",
+    "price": 50,
+    "discountedPrice": 40,
+    "rating": 3.7,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image26.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Professional Dress Shoe",
+    "description": "A refined look for the office.",
+    "price": 130,
+    "discountedPrice": null,
+    "rating": 4.6,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image27.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Flexible Ballet Flat",
+    "description": "A feminine touch with comfort in mind.",
+    "price": 70,
+    "discountedPrice": 60,
+    "rating": 4.1,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image28.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Breathable Mesh Trainer",
+    "description": "For the fitness enthusiast in the gym.",
+    "price": 95,
+    "discountedPrice": 85,
+    "rating": 4.2,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image29.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Insulated Winter Boot",
+    "description": "Keep your feet warm in the coldest weather.",
+    "price": 100,
+    "discountedPrice": 90,
+    "rating": 4.4,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image30.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Cool Slip-On",
+    "description": "Easy to wear, with a trendy appeal.",
+    "price": 65,
+    "discountedPrice": null,
+    "rating": 3.8,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image31.jpg"
+  },
+  {
+    "id": 32,
+    "name": "Waterproof Rain Boot",
+    "description": "Don't let rain stop you from going out.",
+    "price": 55,
+    "discountedPrice": null,
+    "rating": 3.9,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image32.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Classic Leather Loafer",
+    "description": "Timeless design meets comfort.",
+    "price": 120,
+    "discountedPrice": 110,
+    "rating": 4.7,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image33.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Kid's Colorful Sneaker",
+    "description": "Fun and playful shoes for children.",
+    "price": 40,
+    "discountedPrice": 35,
+    "rating": 4.0,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image34.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Sporty Basketball Shoe",
+    "description": "Optimized for performance on the court.",
+    "price": 130,
+    "discountedPrice": null,
+    "rating": 4.5,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image35.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Trendy Ankle Boot",
+    "description": "A fashionable choice for autumn.",
+    "price": 90,
+    "discountedPrice": null,
+    "rating": 4.3,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image36.jpg"
+  },
+  {
+    "id": 37,
+    "name": "Vegan-friendly Shoe",
+    "description": "Stylish and ethical footwear.",
+    "price": 75,
+    "discountedPrice": 68,
+    "rating": 4.2,
+    "category": "shoes",
+    "imageUrl": "path/to/shoe-image37.jpg"
+  },
+
+
+  {
+    "id": 38,
+    "name": "Classic Wrist Watch",
+    "description": "A timeless piece that adds elegance to any outfit.",
+    "price": 300,
+    "discountedPrice": 250,
+    "rating": 4.8,
+    "category": "watches",
+    "imageUrl": "path/to/watch-image.jpg"
+  },
+  {
+    "id": 39,
+    "name": "Sporty Digital Watch",
+    "description": "A digital watch with multiple functionalities.",
+    "price": 100,
+    "discountedPrice": 85,
+    "rating": 4.2,
+    "category": "watches",
+    "imageUrl": "path/to/watch-image39.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Elegant Women's Watch",
+    "description": "A feminine watch with a delicate design.",
+    "price": 200,
+    "discountedPrice": null,
+    "rating": 4.5,
+    "category": "watches",
+    "imageUrl": "path/to/watch-image40.jpg"
+  },
+  {
+    "id": 41,
+    "name": "Durable Military Watch",
+    "description": "Built for toughness and reliability.",
+    "price": 150,
+    "discountedPrice": null,
+    "rating": 4.3,
+    "category": "watches",
+    "imageUrl": "path/to/watch-image41.jpg"
+  },
+  {
+    "id": 42,
+    "name": "Minimalist Unisex Watch",
+    "description": "A simple and clean design for everyone.",
+    "price": 120,
+    "discountedPrice": 100,
+    "rating": 4.0,
+    "category": "watches",
+    "imageUrl": "path/to/watch-image42.jpg"
+  },
+  {
+    "id": 43,
+    "name": "Luxury Gold Watch",
+    "description": "An opulent piece for special occasions.",
+    "price": 500,
+    "discountedPrice": 450,
+    "rating": 4.7,
+    "category": "watches",
+    "imageUrl": "path/to/watch-image43.jpg"
+  },
+
   
+  {
+    "id": 44,
+    "name": "Casual Backpack",
+    "description": "A backpack for daily use, school, or travel.",
+    "price": 60,
+    "discountedPrice": null,
+    "rating": 4.2,
+    "category": "bags",
+    "imageUrl": "path/to/backpack-image44.jpg"
+  },
+  {
+    "id": 45,
+    "name": "Business Briefcase",
+    "description": "A sleek briefcase for the working professional.",
+    "price": 120,
+    "discountedPrice": 100,
+    "rating": 4.6,
+    "category": "bags",
+    "imageUrl": "path/to/briefcase-image45.jpg"
+  },
+
+  {
+    "id": 46,
+    "name": "Travel Duffel Bag",
+    "description": "A spacious duffel bag for short trips.",
+    "price": 70,
+    "discountedPrice": null,
+    "rating": 4.0,
+    "category": "bags",
+    "imageUrl": "path/to/duffel-bag-image46.jpg"
+  },
+  {
+    "id": 47,
+    "name": "Fashionable Tote Bag",
+    "description": "A trendy tote bag for casual outings.",
+    "price": 50,
+    "discountedPrice": 45,
+    "rating": 3.9,
+    "category": "bags",
+    "imageUrl": "path/to/tote-bag-image47.jpg"
+  },
+  {
+    "id": 48,
+    "name": "Outdoor Hiking Bag",
+    "description": "A bag designed for outdoor adventure and hiking.",
+    "price": 80,
+    "discountedPrice": 70,
+    "rating": 4.5,
+    "category": "bags",
+    "imageUrl": "path/to/hiking-bag-image48.jpg"
+  }
+]
