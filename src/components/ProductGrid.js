@@ -3,10 +3,14 @@ import { useParams } from 'react-router-dom';
 import products from '../data/products.json';
 import ProductCart from "./ProductCart";
 import LoadMore from "./LoadMore";
+import ProductCounter from './ProductCounter';
+import Sorter from './Sorter';
 
 const ProductGrid = () => {
+
   const { category } = useParams();
   const initialProductsToShow = 8;
+  const totalProducts = products.filter(product => product.category === category).length;
 
   const [visibleProducts, setVisibleProducts] = useState([]);
 
@@ -21,8 +25,31 @@ const ProductGrid = () => {
     setVisibleProducts([...visibleProducts, ...nextProducts]);
   };
 
+  const handleSort = (sortOption) => {
+    let sortedProducts;
+    switch (sortOption) {
+      case 'alpha-asc':
+        sortedProducts = [...visibleProducts].sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'alpha-desc':
+        sortedProducts = [...visibleProducts].sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      case 'price-asc':
+        sortedProducts = [...visibleProducts].sort((a, b) => a.price - b.price);
+        break;
+      case 'price-desc':
+        sortedProducts = [...visibleProducts].sort((a, b) => b.price - a.price);
+        break;
+      default:
+        sortedProducts = visibleProducts;
+    }
+    setVisibleProducts(sortedProducts);
+  };
+
   return (
     <div className="container mx-auto mt-8">
+       <Sorter onSort={handleSort} />
+      <ProductCounter displayed={visibleProducts.length} total={totalProducts} />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {visibleProducts.map((product) => (
           <ProductCart key={product.id} product={product} />
