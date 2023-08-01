@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import products from '../data/products.json';
-import ProductCart from "./ProductCart"
+import ProductCart from "./ProductCart";
+import LoadMore from "./LoadMore";
 
 const ProductGrid = () => {
   const { category } = useParams();
-  const filteredProducts = products.filter(product => product.category === category);
-
   const initialProductsToShow = 20;
-  const [visibleProducts, setVisibleProducts] = React.useState(filteredProducts.slice(0, initialProductsToShow));
+
+  const [visibleProducts, setVisibleProducts] = useState([]);
+
+  useEffect(() => {
+    const filteredProducts = products.filter(product => product.category === category);
+    setVisibleProducts(filteredProducts.slice(0, initialProductsToShow));
+  }, [category]);
 
   const handleLoadMore = () => {
-    const nextProducts = filteredProducts.slice(visibleProducts.length, visibleProducts.length + initialProductsToShow);
+    const nextProducts = products.filter(product => product.category === category)
+      .slice(visibleProducts.length, visibleProducts.length + initialProductsToShow);
     setVisibleProducts([...visibleProducts, ...nextProducts]);
   };
 
@@ -22,10 +28,8 @@ const ProductGrid = () => {
           <ProductCart key={product.id} product={product} />
         ))}
       </div>
-      {visibleProducts.length < filteredProducts.length && (
-        <button onClick={handleLoadMore} className="bg-blue-500 text-white p-2 mt-4">
-          Load More
-        </button>
+      {visibleProducts.length < products.length && (
+       <LoadMore onClick={handleLoadMore} />
       )}
     </div>
   );
