@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import ProductGrid from './components/ProductGrid';
 
@@ -19,6 +20,7 @@ const App = () => {
           element={<Navigate to="/category/bags" replace />}
         />
       </Routes>
+      <Footer />
     </Router>
   );
 };
