@@ -25,7 +25,7 @@ const Filter = ({ onFilterChange }) => {
       <div className="mb-4">
         <h4 className="font-semibold mb-1">Rating:</h4>
         {['5', '4', '3'].map(star => (
-          <label key={star}>
+          <label key={star} className="block mb-1"> {/* added block styling */}
             <input type="checkbox" value={star} onChange={handleRatingChange} /> {star} Stars & Above
           </label>
         ))}
@@ -35,9 +35,12 @@ const Filter = ({ onFilterChange }) => {
         <input type="range" min="0" max="1000" step="10" value={priceRange} onChange={handlePriceChange} />
         <span>{priceRange}</span>
       </div>
-      <button onClick={handleApplyFilters}>Apply Filters</button>
+      <button onClick={handleApplyFilters} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"> {/* added styling */}
+        Apply Filters
+      </button>
     </div>
   );
 };
 
 export default Filter;
+

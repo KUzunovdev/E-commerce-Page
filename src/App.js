@@ -9,19 +9,23 @@ const App = () => {
 
   return (
     <Router>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <Routes>
-        <Route
-          path="/category/:category"
-          element={<ProductGrid />}
-        />
-        <Route
-          path="/"
-          element={<Navigate to="/category/bags" replace />}
-        />
-      </Routes>
+      <div className="flex-grow">
+        <Routes>
+          <Route
+            path="/category/:category"
+            element={<ProductGrid />}
+          />
+          <Route
+            path="/"
+            element={<Navigate to="/category/bags" replace />}
+          />
+        </Routes>
+      </div>
       <Footer />
-    </Router>
+    </div>
+  </Router>
   );
 };
 

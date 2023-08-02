@@ -25,7 +25,7 @@
     "description": "A casual cap for everyday wear.",
     "price": 20,
     "discountedPrice": 15,
-    "rating": 3.7,
+    "rating": 5,
     "category": "hats",
     "imageUrl": "path/to/hat-image4.jpg"
   },
@@ -65,7 +65,7 @@
     "description": "Ideal for protection against the sun.",
     "price": 30,
     "discountedPrice": 25,
-    "rating": 3.8,
+    "rating": 5,
     "category": "hats",
     "imageUrl": "path/to/hat-image8.jpg"
   },
@@ -85,7 +85,7 @@
     "description": "Stay dry with this waterproof hat.",
     "price": 25,
     "discountedPrice": 20,
-    "rating": 3.5,
+    "rating": 5,
     "category": "hats",
     "imageUrl": "path/to/hat-image10.jpg"
   },

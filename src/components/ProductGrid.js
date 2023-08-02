@@ -84,31 +84,33 @@ const ProductGrid = () => {
 
   return (
     <div className="container mx-auto mt-8">
-      <CategorySection categoryName={category} categoryDescription={categoryDescription} />
-      <div className="flex">
-        <div className="flex flex-col items-center mr-4">
-          <button onClick={toggleFilter}>
-            <div className="flex flex-col items-center">
-              <FilterListIcon />
-              <span className="text-sm">Filter</span>
-            </div>
-          </button>
-          {showFilter && <Filter onFilterChange={handleFilterChange} />}
+  <CategorySection categoryName={category} categoryDescription={categoryDescription} />
+  <div className="flex flex-row"> {/* Changed to flex-row */}
+    <div className="flex flex-col items-start mb-4 sm:mb-0 sm:mr-4">
+      <button onClick={toggleFilter}>
+        <div className="flex flex-col items-center">
+          <FilterListIcon />
+          <span className="text-sm">Filter</span>
         </div>
-        <div className="flex-1">
-          <Sorter onSort={handleSort} />
-          <ProductCounter displayed={visibleProducts.length} total={totalProducts} />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {visibleProducts.map((product) => (
-              <ProductCart key={product.id} product={product} />
-            ))}
-          </div>
-          {visibleProducts.length < totalProducts && (
-            <LoadMore onClick={handleLoadMore} />
-          )}
-        </div>
-      </div>
+      </button>
+      {showFilter && <Filter onFilterChange={handleFilterChange} />}
     </div>
+    <div className="flex-1">
+      <Sorter onSort={handleSort} />
+      <ProductCounter displayed={visibleProducts.length} total={totalProducts} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-2">
+        {visibleProducts.map((product) => (
+          <ProductCart key={product.id} product={product} />
+        ))}
+      </div>
+      {visibleProducts.length < totalProducts && (
+        <LoadMore onClick={handleLoadMore} />
+      )}
+    </div>
+  </div>
+</div>
+
+
   );
   
   
