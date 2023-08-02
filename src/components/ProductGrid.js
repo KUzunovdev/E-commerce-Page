@@ -5,22 +5,41 @@ import ProductCart from "./ProductCart";
 import LoadMore from "./LoadMore";
 import ProductCounter from './ProductCounter';
 import Sorter from './Sorter';
+import Filter from "./Filter"
+import FilterListIcon from '@mui/icons-material/FilterList';
+
+
+const getFilteredProducts = (category, filters) => {
+  let filteredProducts = products.filter(product => product.category === category);
+
+  if (filters.rating.length > 0) {
+    filteredProducts = filteredProducts.filter(product => filters.rating.includes(String(product.rating)));
+  }
+
+  filteredProducts = filteredProducts.filter(product => product.price <= filters.price);
+
+  return filteredProducts;
+};
 
 const ProductGrid = () => {
 
   const { category } = useParams();
   const initialProductsToShow = 8;
-  const totalProducts = products.filter(product => product.category === category).length;
 
+  const [filters, setFilters] = useState({ rating: [], price: 1000 });
   const [visibleProducts, setVisibleProducts] = useState([]);
+  const [totalProducts, setTotalProducts] = useState(0);
+  const [showFilter, setShowFilter] = useState(false);
 
+  
   useEffect(() => {
-    const filteredProducts = products.filter(product => product.category === category);
+    const filteredProducts = getFilteredProducts(category, filters);
+    setTotalProducts(filteredProducts.length);
     setVisibleProducts(filteredProducts.slice(0, initialProductsToShow));
-  }, [category]);
+  }, [category, filters]);
 
   const handleLoadMore = () => {
-    const nextProducts = products.filter(product => product.category === category)
+    const nextProducts = getFilteredProducts()
       .slice(visibleProducts.length, visibleProducts.length + initialProductsToShow);
     setVisibleProducts([...visibleProducts, ...nextProducts]);
   };
@@ -46,20 +65,41 @@ const ProductGrid = () => {
     setVisibleProducts(sortedProducts);
   };
 
+  const handleFilterChange = (filter) => {
+    setFilters(filter);
+  };  
+
+  const toggleFilter = () => {
+    setShowFilter(!showFilter);
+  };
+
   return (
-    <div className="container mx-auto mt-8">
-       <Sorter onSort={handleSort} />
-      <ProductCounter displayed={visibleProducts.length} total={totalProducts} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        {visibleProducts.map((product) => (
-          <ProductCart key={product.id} product={product} />
-        ))}
+    <div className="container mx-auto mt-8 flex">
+      <div className="flex flex-col items-center mr-4">
+        <button onClick={toggleFilter}>
+          <div className="flex flex-col items-center">
+            <FilterListIcon />
+            <span className="text-sm">Filter</span>
+          </div>
+        </button>
+        {showFilter && <Filter onFilterChange={handleFilterChange} />}
       </div>
-      {visibleProducts.length < products.length && (
-       <LoadMore onClick={handleLoadMore} />
-      )}
+      <div className="flex-1">
+        <Sorter onSort={handleSort} />
+        <ProductCounter displayed={visibleProducts.length} total={totalProducts} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          {visibleProducts.map((product) => (
+            <ProductCart key={product.id} product={product} />
+          ))}
+        </div>
+        {visibleProducts.length < totalProducts && (
+          <LoadMore onClick={handleLoadMore} />
+        )}
+      </div>
     </div>
   );
+  
+  
 };
 
 export default ProductGrid;
