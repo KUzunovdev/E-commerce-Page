@@ -1,41 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 
 const Header = () => {
-    return (
-      <header className="bg-white shadow-md py-4 sticky top-0 z-50">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link to="/">
-            <img src={logo} alt="Company Logo" className="h-10" />
-          </Link>
-          <nav>
-            <ul className="flex space-x-6 text-gray-800">
-              <li>
-                <Link to="/category/bags" className="hover:text-blue-500">
-                  Bags
+  const location = useLocation();
+  const categories = [
+    { name: 'Bags', path: '/category/bags' },
+    { name: 'Shoes', path: '/category/shoes' },
+    { name: 'Watches', path: '/category/watches' },
+    { name: 'Hats', path: '/category/hats' },
+  ];
+
+  return (
+    <header className="bg-white shadow-md py-4 sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link to="/">
+          <img src={logo} alt="C4" className="h-10" />
+        </Link>
+        <nav>
+          <ul className="flex space-x-6 text-gray-800">
+            {categories.map((category) => (
+              <li key={category.path}>
+                <Link
+                  to={category.path}
+                  className={location.pathname === category.path ? "text-black-500 text-xl" : "hover:text-blue-500"}
+                >
+                  {category.name}
                 </Link>
               </li>
-              <li>
-                <Link to="/category/shoes" className="hover:text-blue-500">
-                  Shoes
-                </Link>
-              </li>
-              <li>
-                <Link to="/category/watches" className="hover:text-blue-500">
-                  Watches
-                </Link>
-              </li>
-              <li>
-                <Link to="/category/hats" className="hover:text-blue-500">
-                  Hats
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-    );
-  };
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
 
 export default Header;

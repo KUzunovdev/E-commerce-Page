@@ -6,6 +6,7 @@ import LoadMore from "./LoadMore";
 import ProductCounter from './ProductCounter';
 import Sorter from './Sorter';
 import Filter from "./Filter"
+import CategorySection from "./CategorySection"
 import FilterListIcon from '@mui/icons-material/FilterList';
 
 
@@ -31,6 +32,14 @@ const ProductGrid = () => {
   const [totalProducts, setTotalProducts] = useState(0);
   const [showFilter, setShowFilter] = useState(false);
 
+  const descriptions = {
+    bags: "Explore our collection of stylish and durable bags.",
+    shoes: "Find the perfect pair of shoes for any occasion.",
+    watches: "Choose from our exclusive range of elegant watches.",
+    hats: "Discover the latest trends in hats and accessories.",
+  };
+  const categoryDescription = descriptions[category];
+
   
   useEffect(() => {
     const filteredProducts = getFilteredProducts(category, filters);
@@ -39,7 +48,7 @@ const ProductGrid = () => {
   }, [category, filters]);
 
   const handleLoadMore = () => {
-    const nextProducts = getFilteredProducts()
+    const nextProducts = getFilteredProducts(category, filters)
       .slice(visibleProducts.length, visibleProducts.length + initialProductsToShow);
     setVisibleProducts([...visibleProducts, ...nextProducts]);
   };
@@ -74,27 +83,30 @@ const ProductGrid = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8 flex">
-      <div className="flex flex-col items-center mr-4">
-        <button onClick={toggleFilter}>
-          <div className="flex flex-col items-center">
-            <FilterListIcon />
-            <span className="text-sm">Filter</span>
-          </div>
-        </button>
-        {showFilter && <Filter onFilterChange={handleFilterChange} />}
-      </div>
-      <div className="flex-1">
-        <Sorter onSort={handleSort} />
-        <ProductCounter displayed={visibleProducts.length} total={totalProducts} />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {visibleProducts.map((product) => (
-            <ProductCart key={product.id} product={product} />
-          ))}
+    <div className="container mx-auto mt-8">
+      <CategorySection categoryName={category} categoryDescription={categoryDescription} />
+      <div className="flex">
+        <div className="flex flex-col items-center mr-4">
+          <button onClick={toggleFilter}>
+            <div className="flex flex-col items-center">
+              <FilterListIcon />
+              <span className="text-sm">Filter</span>
+            </div>
+          </button>
+          {showFilter && <Filter onFilterChange={handleFilterChange} />}
         </div>
-        {visibleProducts.length < totalProducts && (
-          <LoadMore onClick={handleLoadMore} />
-        )}
+        <div className="flex-1">
+          <Sorter onSort={handleSort} />
+          <ProductCounter displayed={visibleProducts.length} total={totalProducts} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {visibleProducts.map((product) => (
+              <ProductCart key={product.id} product={product} />
+            ))}
+          </div>
+          {visibleProducts.length < totalProducts && (
+            <LoadMore onClick={handleLoadMore} />
+          )}
+        </div>
       </div>
     </div>
   );
